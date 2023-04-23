@@ -1,0 +1,317 @@
+/*
+colors
+#020759 background purple
+#580241 button purple
+#2799fb first playlist background
+#0f8dfb first playlist content background
+#02098d second playlist background
+#010873 second playlist content background
+
+#030a8c title background
+
+#2104d8 second gradiant start
+#000000 second gradiant end
+
+#580241 first scrollbar
+#cbafc2 first scollbar bg
+
+#020759 second/third scrollbar
+#020759 second/third scollbar bg
+
+
+#671d52 trending color
+#c3c3c3 trending citation color
+
+*/
+
+html {
+    background-color: #020759;
+}
+
+.centCont {
+    max-width: 750px;
+    margin: 0 auto;
+    background-color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    text-decoration: none;
+    color: white;
+}
+
+nav {
+    display: none;
+}
+
+header {
+    display: grid;
+    grid-template-areas: 
+    "H0 H1 H1 H1 H1"
+    "H2 H2 H2 H2 H2";
+}
+
+
+
+footer {
+    height: 50px;
+    text-align: center; 
+}
+
+.tBar {
+    background-color: #030a8c;
+    color: white;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.hCont {
+    background-image: linear-gradient(to right, #2004d4, #000000);
+    color: white;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+main {
+    display: grid;
+}
+
+.trending {
+    color: #671d52;
+    margin-bottom: 5px;
+    height: 600px;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.trending, .playlist {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.trending .song {
+    margin-right: 5px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+cite {
+    background-color: #c3c3c3;
+    text-decoration: none;
+    font-style: normal;
+    margin-bottom: 2px;
+}
+
+.songs {
+    display: inline-flex;
+    flex-direction: row;
+    overflow: auto;
+
+}
+
+.playlist {
+    height: 450px;
+    color: #671d52;
+}
+
+.playlist .song {
+    margin: 5px;
+}
+
+#A1 {
+    grid-area: A1;
+}
+
+#B1 {
+    grid-area: B1;
+}
+
+#B1 .songs {
+    background-color: #2799fb;
+}
+
+#B1 .song {
+    background-color: #0f8dfb;
+    color: white;
+    padding: 5px;
+}
+
+#C1 {
+    grid-area: C1;
+}
+
+#C1 .songs {
+    background-color: #02098d;
+}
+
+#C1 .song {
+    background-color: #010873;
+    color: white;
+    padding: 5px;
+}
+
+#H0 {
+    grid-area: H0;
+    padding: 10px 5px;
+    background-color: #030a8c;
+}
+
+#H0 div {
+    width: 25px;
+    height: 5px;
+    background-color: white;
+    margin: 5px 0;
+}
+
+#H1 {
+    grid-area: H1;
+}
+
+#H2 {
+    grid-area: H2;
+}
+
+#H3 {
+    grid-area: H3;
+}
+
+main {
+    grid-template-areas: 
+    "A1"
+    "B1" 
+    "C1";
+}
+
+.trending footer, .playlist footer{
+    display: flex;
+    flex-direction: row;
+}
+
+.button {
+    align-self: center;
+    justify-self: center;
+    text-decoration: none;
+    background-color: #580241;
+    color: white;
+    padding: 5px 25px;
+    border: 1px solid #580241;
+    border-radius: 10px;
+}
+
+audio::-webkit-media-controls-mute-button {
+    background-color: white;
+}
+audio::-webkit-media-controls-play-button {
+    background-color: white;
+}
+audio::-webkit-media-controls-enclosure {
+    opacity: 0.7;
+    z-index: 100;
+}
+.trending .songs::-webkit-scrollbar {
+    background: #580241;
+}
+.trending .songs::-webkit-scrollbar-track {
+    background: #cbafc2;
+}
+.trending .songs::-webkit-scrollbar-thumb {
+    background: #580241;
+    border-radius: 25px;
+}
+.playlist .songs::-webkit-scrollbar {
+    background: #020759;
+}
+.playlist .songs::-webkit-scrollbar-track {
+    background: #1558b2;
+}
+.playlist .songs::-webkit-scrollbar-thumb {
+    background: #020759;
+    border-radius: 25px;
+}
+.playlist .songs::-webkit-scrollbar-thumb:hover {
+    background: #03097c;
+}
+
+h1 {
+    font-size: 1.25em;
+}
+h2, h3 {
+    font-size: 1em;
+}
+
+p, li {
+    font-size: 1em;
+}
+
+footer {
+    align-content: center;
+}
+
+footer p {
+    background-color: white;
+    font-size: .75em;
+    color: #671d52;
+    margin: auto 0;
+}
+
+@media screen and (min-width:550px) {
+
+    #H0 {
+        display: none;
+    }
+
+    header {
+        grid-template-areas: 
+        "H1 H3 H3 H3 H3"
+        "H2 H2 H2 H2 H2";
+    }
+
+    nav ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        gap: 50px;
+    }
+
+    nav {
+        display: flex;
+        background-color: #030a8c;
+        color: white;
+    }
+
+    nav .hiddentoggle {
+        visibility: hidden;
+    }
+
+    main {
+        grid-template-areas: 
+        "A1 A1"
+        "B1 C1";
+    }
+
+    .trending footer, .playlist footer{
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .playlist {
+
+        overflow: visible;
+    }
+
+    .playlist .songs {
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+    }
+
+    .song img{
+        float: left;
+        margin-right: 20px;
+    }
+
+}
